@@ -1,0 +1,32 @@
+{
+	"name": "coreplex/bridge",
+	"description": "A php package to share data from your back end code to the front end",
+	"keywords": ["laravel"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Coreplex",
+			"email": "coreplex1@gmail.com"
+		},
+		{
+			"name": "Michael jennings",
+			"email": "michael.jennings91@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"mockery/mockery": "0.9.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Coreplex\\Bridge\\": "src/"
+		}
+	},
+	"extra": {
+		"component": "package",
+		"frameworks": ["Laravel 5"]
+	},
+	"minimum-stability": "dev"
+}
