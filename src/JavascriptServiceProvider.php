@@ -9,7 +9,7 @@ class JavascriptServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	protected $defer = true;
 
 	/**
 	 * Register the service provider.
@@ -23,10 +23,7 @@ class JavascriptServiceProvider extends ServiceProvider {
             return new Javascript;
         });
 
-        $this->app['Coreplex\Bridge\Contracts\Javascript'] = $this->app->share(function($app)
-        {
-        	return $app['coreplex.bridge.javascript'];
-        });
+        $this->app->alias('coreplex.bridge.javascript', 'Coreplex\Bridge\Contracts\Javascript');
 	}
 
 	/**
@@ -36,7 +33,7 @@ class JavascriptServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return ['coreplex.bridge.javascript', 'Coreplex\Bridge\Contracts\Javascript'];
 	}
 
 }
