@@ -7,11 +7,11 @@ interface Javascript
     /**
      * Shares data with the view.
      *
-     * @param  mixed        $key
-     * @param  array|string $data
+     * @param  array|string $key
+     * @param  mixed|null   $data
      * @return $this
      */
-    public function share($key, $data);
+    public function share($key, $data = null);
 
     /**
      * Renders the shared data from the array
