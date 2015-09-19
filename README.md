@@ -1,6 +1,14 @@
-# Bridge
+# Bridge [![Build Status](https://travis-ci.org/coreplex/bridge.svg?branch=master)](https://travis-ci.org/coreplex/bridge) [![Latest Stable Version](https://poser.pugx.org/coreplex/bridge/v/stable)](https://packagist.org/packages/coreplex/bridge) [![License](https://poser.pugx.org/coreplex/bridge/license)](https://packagist.org/packages/coreplex/bridge)
 
-A php package to share data from your back end code to the front end.
+Ever found yourself needing to access back end data in your JavaScript or front end code? Well that's the aim of this 
+package.
+
+- [Installation](#installation)
+    - [Laravel 5 Integration](#laravel-5-integration)
+- [Usage](#usage)
+- [Sharing Data](#sharing-data)
+- [Rendering Data](#rendering-data)
+
 
 ## Installation
 
