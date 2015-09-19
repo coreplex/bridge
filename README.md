@@ -24,7 +24,7 @@ to download the package.
 
 ### Laravel 5 Integration
 
-To use the package with Laravel 5 firstly add the carpenter service provider to the list of service providers in 
+To use the package with Laravel 5 firstly add the javascript service provider to the list of service providers in 
 `app/config/app.php`.
 
 ```php
