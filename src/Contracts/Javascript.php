@@ -1,21 +1,22 @@
-<?php namespace Coreplex\Bridge\Contracts;
+<?php
 
-interface Javascript {
+namespace Coreplex\Bridge\Contracts;
 
-	/**
-     * Shares data with the view
-     * 
-     * @param  mixed $key
-     * @param  array $data
-     * @return void
+interface Javascript
+{
+    /**
+     * Shares data with the view.
+     *
+     * @param  mixed        $key
+     * @param  array|string $data
+     * @return $this
      */
-    public function share($key, $data = false);
+    public function share($key, $data);
 
     /**
      * Renders the shared data from the array
-     * 
+     *
      * @return void
      */
     public function renderSharedData();
-    
 }

@@ -1,53 +1,55 @@
-<?php namespace Coreplex\Bridge;
+<?php
+
+namespace Coreplex\Bridge;
 
 use Coreplex\Bridge\Contracts\Javascript as JavascriptContract;
 
-class Javascript implements JavascriptContract {
-
+class Javascript implements JavascriptContract
+{
     /**
      * The shared data which will be encoded to JSON before being echoed out
      * to the view
-     * 
+     *
      * @var array
      */
     protected $sharedData = [];
 
     /**
-     * Shares data with the view
-     * 
-     * @param  mixed $key
-     * @param  array $data
-     * @return void
+     * Shares data with the view.
+     *
+     * @param  mixed        $key
+     * @param  array|string $data
+     * @return $this
      */
-    public function share($key, $data = false)
+    public function share($key, $data)
     {
         if (is_array($key)) {
             $this->sharedData = array_merge($this->sharedData, $key);
         } else {
             $this->sharedData[$key] = $data;
         }
+
+        return $this;
     }
 
     /**
-     * Renders the shared data from the array
-     * 
-     * @return void
+     * Renders the shared data from the array.
+     *
+     * @return string
      */
     public function renderSharedData()
     {
-        $sharedDataScriptSnippet = '
-        <script type="text/javascript">
-            ' . $this->getGlobalAccessJsFunction() . '
-            sharedData = ' . json_encode($this->sharedData) . ';
-        </script>';
-
-        echo $sharedDataScriptSnippet;
+        return sprintf(
+            '<script type="text/javascript">%s sharedData = %s;</script>',
+            $this->getGlobalAccessJsFunction(),
+            json_encode($this->sharedData)
+        );
     }
 
     /**
      * Returns JavaScript for a global accessor using the array dot notation
      * (e.g. getSharedData('arrayMaster.arrayChild'))
-     * 
+     *
      * @return string
      */
     protected function getGlobalAccessJsFunction($functionName = 'getSharedData')
@@ -95,5 +97,4 @@ if (typeof window.' . $functionName . ' === "undefined") {
 }
         ';
     }
-
 }
