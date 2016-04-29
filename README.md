@@ -19,7 +19,7 @@ command line, or add the following to your `composer.json` and then run either `
 to download the package.
 
 ```php
-"coreplex/notifier": "~0.1"
+"coreplex/bridge": "~0.1"
 ```
 
 ### Laravel 5 Integration
@@ -30,7 +30,7 @@ To use the package with Laravel 5 firstly add the javascript service provider to
 ```php
 'providers' => array(
 
-  Coreplex\Notifier\JavascriptServiceProvider::class,
+  Coreplex\Bridge\JavascriptServiceProvider::class,
 
 );
 ```
@@ -40,7 +40,7 @@ If you wish to use the facade then add the following to your aliases array in `a
 ```php
 'aliases' => array(
 
-  Notifier'  => Coreplex\Bridge\Contracts\Javascript::class,
+  Notifier'  => Coreplex\Bridge\Facades\Javascript::class,
 
 );
 ```
