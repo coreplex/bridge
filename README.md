@@ -40,7 +40,7 @@ If you wish to use the facade then add the following to your aliases array in `a
 ```php
 'aliases' => array(
 
-  Notifier'  => Coreplex\Bridge\Facades\Javascript::class,
+  'Javascript'  => Coreplex\Bridge\Facades\Javascript::class,
 
 );
 ```
