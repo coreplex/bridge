@@ -20,7 +20,7 @@ class JavascriptServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['coreplex.bridge.javascript'] = $this->app->share(function ($app) {
+        $this->app->singleton('coreplex.bridge.javascript', function() {
             return new Javascript;
         });
 
